@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Laravel 3.2 - Brazilian Documentation
 =====================================
 
@@ -18,3 +19,9 @@ Laravel is open-sourced software licensed under the MIT License.
 ## Bugs/Requests
 
 * You can [report a bug or request a feature here](http://github.com/LaravelBrasil/documentation/issues)
+=======
+laravel.com.br
+==============
+
+Laravel website
+>>>>>>> upstream/master
