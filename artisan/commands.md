@@ -1,43 +1,43 @@
-# Artisan Commands
+# Comandos do Artisan
 
-## Contents
+## Conteúdo
 
-- [Help](#help)
-- [Application Configuration](#application-configuration)
-- [Sessions](#sessions)
-- [Migrations](#migrations)
-- [Bundles](#bundles)
-- [Tasks](#tasks)
-- [Unit Tests](#unit-tests)
-- [Routing](#routing)
-- [Application Keys](#keys)
-- [CLI Options](#cli-options)
+- [Ajuda](#help)
+- [Con~figuração da Aplicação](#application-configuration)
+- [Sessões](#sessions)
+- [Migrações](#migrations)
+- [Pacotes](#bundles)
+- [Tarefas](#tasks)
+- [Testes Unitários](#unit-tests)
+- [Roteamento](#routing)
+- [Chaves de Aplicação](#keys)
+- [Opções da ILC](#cli-options)
 
 <a name="help"></a>
-## Help
+## Ajuda
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
-View a list of available artisan commands. | `php artisan help:commands`
+Veja uma lista de comandos do artisan. | `php artisan help:commands`
 
 <a name="application-configuration"></a>
 ## Application Configuration <small>[(More Information)](/docs/install#basic-configuration)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Generate a secure application key. An application key will not be generated unless the field in **config/application.php** is empty. | `php artisan key:generate`
 
 <a name="sessions"></a>
 ## Database Sessions <small>[(More Information)](/docs/session/config#database)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Create a session table  | `php artisan session:table`
 
 <a name="migrations"></a>
 ## Migrations <small>[(More Information)](/docs/database/migrations)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Create the Laravel migration table  | `php artisan migrate:install`
 Creating a migration  | `php artisan migrate:make create_users_table`
@@ -51,7 +51,7 @@ Roll back all migrations that have ever run  |  `php artisan migrate:reset`
 <a name="bundles"></a>
 ## Bundles <small>[(More Information)](/docs/bundles)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Install a bundle  |  `php artisan bundle:install eloquent`
 Upgrade a bundle  |  `php artisan bundle:upgrade eloquent`
@@ -65,7 +65,7 @@ Publish all bundles assets | `php artisan bundle:publish`
 <a name="tasks"></a>
 ## Tasks <small>[(More Information)](/docs/artisan/tasks)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Calling a task  |  `php artisan notify`
 Calling a task and passing arguments  |  `php artisan notify taylor`
@@ -76,7 +76,7 @@ Running a specific method on a bundle  |  `php artisan admin::generate:list`
 <a name="unit-tests"></a>
 ## Unit Tests <small>[(More Information)](/docs/testing)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Running the application tests  |  `php artisan test`
 Running the bundle tests  |  `php artisan test bundle-name`
@@ -84,7 +84,7 @@ Running the bundle tests  |  `php artisan test bundle-name`
 <a name="routing"></a>
 ## Routing <small>[(More Information)](/docs/routing)</small>
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Calling a route  |  `php artisan route:call get api/user/1`
 
@@ -94,7 +94,7 @@ Calling a route  |  `php artisan route:call get api/user/1`
 <a name="keys"></a>
 ## Application Keys
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Generate an application key  |  `php artisan key:generate`
 
@@ -104,7 +104,7 @@ Generate an application key  |  `php artisan key:generate`
 <a name="cli-options"></a>
 ## CLI Options
 
-Description  | Command
+Descrição  | Comando
 ------------- | -------------
 Setting the Laravel environment  |  `php artisan foo --env=local`
 Setting the default database connection  |  `php artisan foo --database=sqlitename`
