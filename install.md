@@ -4,7 +4,7 @@
 
 - [Requerimentos](#requerimentos)
 - [Instalação](#instalacao)
-- [Configuração do servidor](#configuracao-do-servidor)
+- [Configuração do Servidor](#configuracao-do-servidor)
 - [Configuração Básica](#configuracao-basica)
 - [Ambientes](#ambientes)
 - [URLs Limpas](#urls-limpas)
