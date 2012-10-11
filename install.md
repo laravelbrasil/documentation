@@ -5,15 +5,15 @@
 - [Requerimentos](#requerimentos)
 - [Instalação](#instalacao)
 - [Configuração do servidor](#configuracao-do-servidor)
-- [Basic Configuration](#basic-configuration)
-- [Environments](#environments)
-- [Cleaner URLs](#cleaner-urls)
+- [Configuração Básica](#configuracao-basica)
+- [Ambientes](#ambientes)
+- [URLs Limpas](#urls-limpas)
 
 <a name="requerimentos"></a>
 ## Requerimentos
 
-- Apache, nginx, or another compatible web server.
-- Laravel takes advantage of the powerful features that have become available in PHP 5.3. Consequently, PHP 5.3 is a requirement.
+- Apache, nginx, ou outro servidor web compatível.
+- Laravel tira proveito dos recursos mais poderosos do PHP 5.3. Consequentimente, PHP 5.3 é uma exigência.
 - Laravel uses the [FileInfo library](http://php.net/manual/en/book.fileinfo.php) to detect files' mime-types. This is included by default with PHP 5.3. However, Windows users may need to add a line to their php.ini file before the Fileinfo module is enabled. For more information check out the [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php).
 - Laravel uses the [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) for encryption and hash generation. Mcrypt typically comes pre-installed. If you can't find Mcrypt in the output of phpinfo() then check the vendor site of your LAMP installation or check out the [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php).
 
@@ -44,7 +44,7 @@ If you are having problems installing, try the following:
 - Verify that your storage folder and the folders within are writable by your web server.
 
 <a name="configuracao-do-servidor"></a>
-## Configuração do servidor
+## Configuração do Servidor
 
 Like most web-development frameworks, Laravel is designed to protect your application code, bundles, and local storage by placing only files that are necessarily public in the web server's DocumentRoot. This prevents some types of server misconfiguration from making your code (including database passwords and other configuration data) accessible through the web server. It's best to be safe. 
 
@@ -61,8 +61,8 @@ Notice that while we installed to **/Users/JonSnow/Sites/MySite** our DocumentRo
 
 While pointing the DocumentRoot to the public folder is a commonly used best-practice, it's possible that you may need to use Laravel on a host that does not allow you to update your DocumentRoot. A collection of algorithms to circumvent this need can be found [on the Laravel forums.](http://forums.laravel.com/viewtopic.php?id=1258)
 
-<a name="basic-configuration"></a>
-## Basic Configuration
+<a name="configuracao-basica"></a>
+## Configuração Básica
 
 All of the configuration provided are located in your applications config/ directory. We recommend that you read through these files just to get a basic understanding of the options available to you. Pay special attention to the **application/config/application.php** file as it contains the basic configuration options for your application.
 
@@ -70,8 +70,8 @@ It's **extremely** important that you change the **application key** option befo
 
 > **Note:** If you are using mod_rewrite, you should set the index option to an empty string.
 
-<a name="environments"></a>
-## Environments
+<a name="ambientes"></a>
+## Ambientes
 
 Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel's default environment handling mechanism is URL based, which will make setting up environments a breeze. Pop open the `paths.php` file in the root of your Laravel installation. You should see an array like this:
 
@@ -95,8 +95,8 @@ In this example, the local **URL** option will override the **URL** option in **
 
 Isn't it easy? Of course, you are free to create as many environments as you wish!
 
-<a name="cleaner-urls"></a>
-## Cleaner URLs
+<a name="urls-limpas"></a>
+## URLs Limpas
 
 Most likely, you do not want your application URLs to contain "index.php". You can remove it using HTTP rewrite rules. If you are using Apache to serve your application, make sure to enable mod_rewrite and create a **.htaccess** file like this one in your **public** directory:
 
