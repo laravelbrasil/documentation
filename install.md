@@ -1,4 +1,4 @@
-# Installation & Setup
+# Instalação e Configuração
 
 ## Contents
 
