@@ -13,9 +13,9 @@
 ## Requerimentos
 
 - Apache, nginx, ou outro servidor web compatível.
-- Laravel tira proveito dos recursos mais poderosos do PHP 5.3. Consequentimente, PHP 5.3 é uma exigência.
-- Laravel uses the [FileInfo library](http://php.net/manual/en/book.fileinfo.php) to detect files' mime-types. This is included by default with PHP 5.3. However, Windows users may need to add a line to their php.ini file before the Fileinfo module is enabled. For more information check out the [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php).
-- Laravel uses the [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) for encryption and hash generation. Mcrypt typically comes pre-installed. If you can't find Mcrypt in the output of phpinfo() then check the vendor site of your LAMP installation or check out the [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php).
+- Laravel aproveita os recursos mais poderosos do PHP 5.3. Consequentemente, PHP 5.3 é uma exigência.
+- Laravel usa a [biblioteca FileInfo] (http://php.net/manual/en/book.fileinfo.php) para detectar mime-types dos arquivos. Ela está incluído por padrão no PHP 5.3. No entanto, os usuários do Windows podem precisar adicionar uma linha ao seu arquivo php.ini antes do módulo Fileinfo estar ativado. Para mais informações confira os detalhes de [instalação / configuração no PHP.net] (http://php.net/manual/en/fileinfo.installation.php).
+- Laravel usa a [biblioteca Mcrypt] (http://php.net/manual/en/book.mcrypt.php) para criptografia e gerar hash. Mcrypt normalmente vem pré-instalado. Se você não consegue encontrar Mcrypt na saída do phpinfo() verifique o site do fornecedor de sua instalação LAMP ou confira os detalhes de [instalação / configuração no PHP.net] (http://php.net/manual/en/ book.mcrypt.php).
 
 <a name="instalacao"></a>
 ## Instalação
