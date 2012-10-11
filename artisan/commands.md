@@ -21,21 +21,21 @@ Descrição  | Comando
 Veja uma lista de comandos do artisan. | `php artisan help:commands`
 
 <a name="application-configuration"></a>
-## Configuração da Aplicação <small>[(Mains Informações)](/docs/install#basic-configuration)</small>
+## Configuração da Aplicação <small>[(Mais Informações)](/docs/install#basic-configuration)</small>
 
 Descrição  | Comando
 ------------- | -------------
 Gera uma chave de aplicação segura. Uma chave de aplicação não será gerada a não ser que o campo em **config/application.php** esteja vazio. | `php artisan key:generate`
 
 <a name="sessions"></a>
-## Sessões de Banco de Dados <small>[(Mains Informações)](/docs/session/config#database)</small>
+## Sessões de Banco de Dados <small>[(Mais Informações)](/docs/session/config#database)</small>
 
 Descrição  | Comando
 ------------- | -------------
 Crie uma tabela de sessão  | `php artisan session:table`
 
 <a name="migrations"></a>
-## Migrações <small>[(Mains Informações)](/docs/database/migrations)</small>
+## Migrações <small>[(Mais Informações)](/docs/database/migrations)</small>
 
 Descrição  | Comando
 ------------- | -------------
@@ -49,7 +49,7 @@ Desfazendo a última operação de migração | `php artisan migrate:rollback`
 Desfazendo todas as migrações que já foram executadas alguma vez  |  `php artisan migrate:reset`
 
 <a name="bundles"></a>
-## Pacotes <small>[(Mains Informações)](/docs/bundles)</small>
+## Pacotes <small>[(Mais Informações)](/docs/bundles)</small>
 
 Descrição  | Comando
 ------------- | -------------
@@ -63,7 +63,7 @@ Publish all bundles assets | `php artisan bundle:publish`
 > **Nota:** Após a instalação você precisa [registrar o pacote](../bundles/#registering-bundles)
 
 <a name="tasks"></a>
-## Taredas <small>[(Mains Informações)](/docs/artisan/tasks)</small>
+## Taredas <small>[(Mais Informações)](/docs/artisan/tasks)</small>
 
 Descrição  | Comando
 ------------- | -------------
@@ -74,7 +74,7 @@ Rodando uma uma tarefa em um pacote | `php artisan admin::generate`
 Rodando um métdo específico em um pacote  |  `php artisan admin::generate:list`
 
 <a name="unit-tests"></a>
-## Testes Unitários <small>[(Mains Informações)](/docs/testing)</small>
+## Testes Unitários <small>[(Mais Informações)](/docs/testing)</small>
 
 Descrição  | Comando
 ------------- | -------------
@@ -82,7 +82,7 @@ Rodando os testes da aplicação  |  `php artisan test`
 Rodando os testes do pacote  |  `php artisan test bundle-name`
 
 <a name="routing"></a>
-## Roteando <small>[(Mains Informações)](/docs/routing)</small>
+## Roteando <small>[(Mais Informações)](/docs/routing)</small>
 
 Descrição  | Comando
 ------------- | -------------
