@@ -2,23 +2,23 @@
 
 ## Contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Server Configuration](#server-configuration)
+- [Requerimentos](#requerimentos)
+- [Instalação](#instalacao)
+- [Configuração do servidor](#configuracao-do-servidor)
 - [Basic Configuration](#basic-configuration)
 - [Environments](#environments)
 - [Cleaner URLs](#cleaner-urls)
 
-<a name="requirements"></a>
-## Requirements
+<a name="requerimentos"></a>
+## Requerimentos
 
 - Apache, nginx, or another compatible web server.
 - Laravel takes advantage of the powerful features that have become available in PHP 5.3. Consequently, PHP 5.3 is a requirement.
 - Laravel uses the [FileInfo library](http://php.net/manual/en/book.fileinfo.php) to detect files' mime-types. This is included by default with PHP 5.3. However, Windows users may need to add a line to their php.ini file before the Fileinfo module is enabled. For more information check out the [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php).
 - Laravel uses the [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) for encryption and hash generation. Mcrypt typically comes pre-installed. If you can't find Mcrypt in the output of phpinfo() then check the vendor site of your LAMP installation or check out the [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php).
 
-<a name="installation"></a>
-## Installation
+<a name="instalacao"></a>
+## Instalação
 
 1. [Download Laravel](http://laravel.com/download)
 2. Extract the Laravel archive and upload the contents to your web server.
@@ -43,8 +43,8 @@ If you are having problems installing, try the following:
 - If you are using mod_rewrite, set the **index** option in **application/config/application.php** to an empty string.
 - Verify that your storage folder and the folders within are writable by your web server.
 
-<a name="server-configuration"></a>
-## Server Configuration
+<a name="configuracao-do-servidor"></a>
+## Configuração do servidor
 
 Like most web-development frameworks, Laravel is designed to protect your application code, bundles, and local storage by placing only files that are necessarily public in the web server's DocumentRoot. This prevents some types of server misconfiguration from making your code (including database passwords and other configuration data) accessible through the web server. It's best to be safe. 
 
