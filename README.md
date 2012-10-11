@@ -10,6 +10,7 @@ If you want to contribute with this documentation translation, just make a fork 
 ## Contributors
 
 * Bruno Batista
+* Angelo Valentim Merlo
 
 ## License
 
