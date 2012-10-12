@@ -1,25 +1,25 @@
 # Bundles
 
-## Contents
+## Conteúdo
 
-- [The Basics](#the-basics)
-- [Creating Bundles](#creating-bundles)
-- [Registering Bundles](#registering-bundles)
+- [O Básico](#the-basics)
+- [Criando Bundles](#creating-bundles)
+- [Registrando Bundles](#registering-bundles)
 - [Bundles & Class Loading](#bundles-and-class-loading)
-- [Starting Bundles](#starting-bundles)
-- [Routing To Bundles](#routing-to-bundles)
-- [Using Bundles](#using-bundles)
+- [Iniciando Bundles](#starting-bundles)
+- [Roteando para Bundles](#routing-to-bundles)
+- [Usando Bundles](#using-bundles)
 - [Bundle Assets](#bundle-assets)
-- [Installing Bundles](#installing-bundles)
-- [Upgrading Bundles](#upgrading-bundles)
+- [Instalando Bundles](#installing-bundles)
+- [Atualizando Bundles](#upgrading-bundles)
 
 <a name="the-basics"></a>
-## The Basics
+## O Básico
 
 Bundles are the heart of the improvements that were made in Laravel 3.0. They are a simple way to group code into convenient "bundles". A bundle can have it's own views, configuration, routes, migrations, tasks, and more. A bundle could be everything from a database ORM to a robust authentication system. Modularity of this scope is an important aspect that has driven virtually all design decisions within Laravel. In many ways you can actually think of the application folder as the special default bundle with which Laravel is pre-programmed to load and use.
 
 <a name="creating-and-registering"></a>
-## Creating Bundles
+## Criando Bundles
 
 The first step in creating a bundle is to create a folder for the bundle within your **bundles** directory. For this example, let's create an "admin" bundle, which could house the administrator back-end to our application. The **application/start.php** file provides some basic configuration that helps to define how our application will run. Likewise we'll create a **start.php** file within our new bundle folder for the same purpose. It is run every time the bundle is loaded. Let's create it:
 
@@ -36,7 +36,7 @@ In this start file we've told the auto-loader that classes that are namespaced t
 Next, we'll look at how to register this bundle with our application!
 
 <a name="registering-bundles"></a>
-## Registering Bundles
+## Registrando Bundles
 
 Now that we have our admin bundle, we need to register it with Laravel. Pull open your **application/bundles.php** file. This is where you register all bundles used by your application. Let's add ours:
 
@@ -86,7 +86,7 @@ Notice that each of these options corresponds to a function on the Laravel [auto
 You may have also noticed the **(:bundle)** place-holder. For convenience, this will automatically be replaced with the path to the bundle. It's a piece of cake.
 
 <a name="starting-bundles"></a>
-## Starting Bundles
+## Iniciando Bundles
 
 So our bundle is created and registered, but we can't use it yet. First, we need to start it:
 
@@ -126,7 +126,7 @@ It is also possible to "disable" a bundle so that it will never be started.
 	Bundle::disable('admin');
 
 <a name="routing-to-bundles"></a>
-## Routing To Bundles
+## Roteando para Bundles
 
 Refer to the documentation on [bundle routing](/docs/routing#bundle-routes) and [bundle controllers](/docs/controllers#bundle-controllers) for more information on routing and bundles.
 
@@ -181,7 +181,7 @@ This command will create a folder for the bundle's assets within the application
 For more information on conveniently getting the path to your bundle assets once they are in the public directory, refer to the documentation on [asset management](/docs/views/assets#bundle-assets).
 
 <a name="installing-bundles"></a>
-## Installing Bundles
+## Instalando Bundles
 
 Of course, you may always install bundles manually; however, the "Artisan" CLI provides an awesome method of installing and upgrading your bundle. The framework uses simple Zip extraction to install the bundle. Here's how it works.
 
@@ -194,7 +194,7 @@ Great! Now that you're bundle is installed, you're ready to [register it](#regis
 Need a list of available bundles? Check out the Laravel [bundle directory](http://bundles.laravel.com)
 
 <a name="upgrading-bundles"></a>
-## Upgrading Bundles
+## Atualizando Bundles
 
 When you upgrade a bundle, Laravel will automatically remove the old bundle and install a fresh copy.
 
