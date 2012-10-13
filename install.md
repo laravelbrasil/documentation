@@ -1,79 +1,81 @@
-# Installation & Setup
+# Instalação e Configuração
 
-## Contents
+## Conteúdo
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Server Configuration](#server-configuration)
-- [Basic Configuration](#basic-configuration)
-- [Environments](#environments)
-- [Cleaner URLs](#cleaner-urls)
+- [Requerimentos](#requerimentos)
+- [Instalação](#instalacao)
+- [Configuração do Servidor](#configuracao-do-servidor)
+- [Configuração Básica](#configuracao-basica)
+- [Ambientes](#ambientes)
+- [URLs Limpas](#urls-limpas)
 
-<a name="requirements"></a>
-## Requirements
+<a name="requerimentos"></a>
+## Requerimentos
 
-- Apache, nginx, or another compatible web server.
-- Laravel takes advantage of the powerful features that have become available in PHP 5.3. Consequently, PHP 5.3 is a requirement.
-- Laravel uses the [FileInfo library](http://php.net/manual/en/book.fileinfo.php) to detect files' mime-types. This is included by default with PHP 5.3. However, Windows users may need to add a line to their php.ini file before the Fileinfo module is enabled. For more information check out the [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php).
-- Laravel uses the [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) for encryption and hash generation. Mcrypt typically comes pre-installed. If you can't find Mcrypt in the output of phpinfo() then check the vendor site of your LAMP installation or check out the [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php).
+- Apache, nginx, ou outro servidor web compatível.
+- Laravel aproveita os recursos mais poderosos do PHP 5.3. Consequentemente, PHP 5.3 é uma exigência.
+- Laravel usa a [biblioteca FileInfo](http://php.net/manual/en/book.fileinfo.php) para detectar mime-types dos arquivos. Ela está incluído por padrão no PHP 5.3. No entanto, os usuários do Windows podem precisar adicionar uma linha ao seu arquivo php.ini antes do módulo Fileinfo estar ativado. Para mais informações confira os detalhes de [instalação / configuração no PHP.net](http://php.net/manual/en/fileinfo.installation.php).
+- Laravel usa a [biblioteca Mcrypt](http://php.net/manual/en/book.mcrypt.php) para criptografia e gerar hash. Mcrypt normalmente vem pré-instalado. Se você não consegue encontrar Mcrypt na saída do phpinfo() verifique o site do fornecedor de sua instalação LAMP ou confira os detalhes de [instalação / configuração no PHP.net](http://php.net/manual/en/ book.mcrypt.php).
 
-<a name="installation"></a>
-## Installation
+<a name="instalacao"></a>
+## Instalação
 
-1. [Download Laravel](http://laravel.com/download)
-2. Extract the Laravel archive and upload the contents to your web server.
-3. Set the value of the **key** option in the **config/application.php** file to a random, 32 character string.
-4. Verify that the `storage/views` directory is writable.
-5. Navigate to your application in a web browser.
+1. [Download do Laravel](http://laravel.com/download)
+2. Extraia o arquivo do Laravel e faça upload do seu conteúdo para seu servidor web.
+3. Defina o valor da opção **key** no arquivo **config/application.php** com uma string de até 32 caracteres.
+4. Verifique se a pasta 'storage/views' tem permissão para escrita.
+5. Pronto, abra a sua aplicação em seu navegador.
 
-If all is well, you should see a pretty Laravel splash page. Get ready, there is lots more to learn!
+Se tudo estiver bem, você verá a página inicial do Laravel. Prepare-se, há muito mais a aprender!
 
-### Extra Goodies
+### Extras
 
-Installing the following goodies will help you take full advantage of Laravel, but they are not required:
+Fazendo as seguintes instalações ajudará você tirar maior proveito do Laravel, mas elas não são necessárias:
 
-- SQLite, MySQL, PostgreSQL, or SQL Server PDO drivers.
+- SQLite, MySQL, PostgreSQL, ou SQL Server PDO drivers.
 - Memcached or APC.
 
-### Problems?
+### Problemas?
 
-If you are having problems installing, try the following:
+Caso você tenha problemas na instalação tente o seguinte:
 
-- Make sure the **public** directory is the document root of your web server. (see: Server Configuration below)
+- Verifique se o diretório **public** é a raiz do documento em seu servidor web. (veja: Configuração do Servidor)
 - If you are using mod_rewrite, set the **index** option in **application/config/application.php** to an empty string.
-- Verify that your storage folder and the folders within are writable by your web server.
+- Se você estiver usando mod_rewrite, defina a opção **index** no arquivo **application/config/application.php** para uma string vazia.
+- Verifique se a pasta **storage** e as subpastas tem permissão de escrita para o servidor web.
 
-<a name="server-configuration"></a>
-## Server Configuration
+<a name="configuracao-do-servidor"></a>
+## Configuração do Servidor
 
-Like most web-development frameworks, Laravel is designed to protect your application code, bundles, and local storage by placing only files that are necessarily public in the web server's DocumentRoot. This prevents some types of server misconfiguration from making your code (including database passwords and other configuration data) accessible through the web server. It's best to be safe. 
+Como a maioria dos frameworks para web, Laravel é projetado para proteger seu código, bundles e armazenamento, colocando apenas os arquivos que são necessariamente públicos no DocumentRoot do servidor web. Isso evita que alguns tipos de erros de configuração do servidor faça com que o seu código (incluindo senhas de banco de dados e outros dados de configuração), se torne acessível através do servidor web. É melhor estar seguro.
 
 In this example let's imagine that we installed Laravel to the directory **/Users/JonSnow/Sites/MySite**.
+Neste exemplo, vamos imaginar que nós instalamos Laravel no diretório **/Users/JonSnow/Sites/MySite**.
 
-A very basic example of an Apache VirtualHost configuration for MySite might look like this.
+Um exemplo muito simples de uma configuração VirtualHost do Apache para MySite pode ser assim.
 
 	<VirtualHost *:80>
 		DocumentRoot /Users/JonSnow/Sites/MySite/public
 		ServerName mysite.dev
 	</VirtualHost>
 
-Notice that while we installed to **/Users/JonSnow/Sites/MySite** our DocumentRoot points to **/Users/JonSnow/Sites/MySite/public**.
+Note que, quando nós colocamos a linha **/Users/JonSnow/Sites/MySite** nosso DocumentRoot aponta para **/Users/JonSnow/Sites/MySite/public**.
 
-While pointing the DocumentRoot to the public folder is a commonly used best-practice, it's possible that you may need to use Laravel on a host that does not allow you to update your DocumentRoot. A collection of algorithms to circumvent this need can be found [on the Laravel forums.](http://forums.laravel.com/viewtopic.php?id=1258)
+Embora apontar o DocumentRoot para a pasta pública é uma boa práticas, é possível que você venha precisar usar o Laravel em um host que não permite que você altere seu DocumentRoot. Uma coleção de algoritmos para contornar essa necessidade pode ser encontrado no [fórum do Laravel.](Http://forums.laravel.com/viewtopic.php?id=1258)
 
-<a name="basic-configuration"></a>
-## Basic Configuration
+<a name="configuracao-basica"></a>
+## Configuração Básica
 
-All of the configuration provided are located in your applications config/ directory. We recommend that you read through these files just to get a basic understanding of the options available to you. Pay special attention to the **application/config/application.php** file as it contains the basic configuration options for your application.
+Toda a configuração fornecida está localizada na pasta config/ da sua aplicação. Recomendamos que você leia esses arquivos apenas para obter uma compreensão básica das opções disponíveis. Preste atenção especialmente no arquivo **application/config/application.php**, nele contém as opções de configuração básica para sua aplicação.
 
-It's **extremely** important that you change the **application key** option before working on your site. This key is used throughout the framework for encryption, hashing, etc. It lives in the **config/application.php** file and should be set to a random, 32 character string. A standards-compliant application key can be automatically generated using the Artisan command-line utility.  More information can be found in the [Artisan command index](/docs/artisan/commands).
+É **extremamente** importante que você altere a opção **application key** antes de trabalhar em seu site. Esta chave é usada em toda a estrutura para criptografia, hash, etc. Ela fica no arquivo **config/application.php** e deve ser colocado uma string aleatória de 32 caracteres. Uma chave pode ser gerada automaticamente usando o utilitário de linha de comando Artisan. Mais informações podem ser encontradas no [índice de comando do Artisan](/docs/artisan/commands).
 
-> **Note:** If you are using mod_rewrite, you should set the index option to an empty string.
+> **Nota:** Se você estiver usando mod_rewrite, você deve definir a opção de index para uma string vazia.
 
-<a name="environments"></a>
-## Environments
+<a name="ambientes"></a>
+## Ambientes
 
-Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel's default environment handling mechanism is URL based, which will make setting up environments a breeze. Pop open the `paths.php` file in the root of your Laravel installation. You should see an array like this:
+Provavelmente, as opções de configuração que você precisa para o desenvolvimento local não é a mesmas que você precisa em seu servidor de produção. O padrão de manipulação de ambientes do Laravel é baseado em URL, o que torna a criação de ambientes muito fácil. Abra o arquivo 'paths.php' na raiz da sua instalação. Você deverá ver algo como isto:
 
 	$environments = array(
 
@@ -81,9 +83,9 @@ Most likely, the configuration options you need for local development are not th
 
 	);
 
-This tells Laravel that any URLs beginning with "localhost" or ending with ".dev" should be considered part of the "local" environment.
+Isto diz ao Laravel que qualquer início de URLs com "localhost" ou terminando com ".dev" deve ser considerado parte do ambiente "local".
 
-Next, create an **application/config/local** directory. Any files and options you place in this directory will override the options in the base **application/config** directory. For example, you may wish to create an **application.php** file within your new **local** configuration directory:
+Em seguida, crie um diretório **application/config/local**. Todos os arquivos e opções que você colocar nesta pasta irá substituir as padrões no diretório **application/config**. Por exemplo, você pode criar um arquivo **application.php** dentro de seu novo diretório de configuração local:
 
 	return array(
 
@@ -91,14 +93,14 @@ Next, create an **application/config/local** directory. Any files and options yo
 
 	);
 
-In this example, the local **URL** option will override the **URL** option in **application/config/application.php**. Notice that you only need to specify the options you wish to override.
+Neste exemplo, a **URL** local irá substituir a opção **URL** do arquivo **application/config/application.php**. Observe que você só precisa especificar as opções que você deseja substituir.
 
-Isn't it easy? Of course, you are free to create as many environments as you wish!
+Não é fácil? É claro, você é livre para desenvolver com vários ambientes configurados como desejar!
 
-<a name="cleaner-urls"></a>
-## Cleaner URLs
+<a name="urls-limpas"></a>
+## URLs Limpas
 
-Most likely, you do not want your application URLs to contain "index.php". You can remove it using HTTP rewrite rules. If you are using Apache to serve your application, make sure to enable mod_rewrite and create a **.htaccess** file like this one in your **public** directory:
+Provavelmente, você não quer que seu aplicativo contenha "index.php"nas URLs. Você pode removê-lo usando as regras de reescrita HTTP. Se você estiver usando o Apache para servir a sua aplicação, certifique-se de habilitar mod_rewrite e criar um arquivo **.htaccess** como este em seu diretório **public**:
 
 	<IfModule mod_rewrite.c>
 	     RewriteEngine on
@@ -109,7 +111,7 @@ Most likely, you do not want your application URLs to contain "index.php". You c
 	     RewriteRule ^(.*)$ index.php/$1 [L]
 	</IfModule>
 
-Is the .htaccess file above not working for you? Try this one:
+Se o ,htaccess acima não está funcionando para você tente este:
 
 	Options +FollowSymLinks
 	RewriteEngine on
@@ -119,6 +121,6 @@ Is the .htaccess file above not working for you? Try this one:
 
 	RewriteRule . index.php [L]
 
-After setting up HTTP rewriting, you should set the **index** configuration option in **application/config/application.php** to an empty string.
+Depois de configurar o HTTP rewriting, você deve definir a opção **index** da configuração em **application/config/application.php** para uma string vazia.
 
-> **Note:** Each web server has a different method of doing HTTP rewrites, and may require a slightly different .htaccess file.
+> **Nota:** Cada servidor web tem um método diferente de fazer HTTP rewriting, e pode exigir um .htaccess diferente.
